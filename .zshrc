@@ -1,5 +1,5 @@
 #echo $(pwd -P)
-ZSHHOME=".zsh.d"
+ZSHHOME="~/dotfiles/.zsh.d"
 
 if [ -d $ZSHHOME -a -r $ZSHHOME -a \
      -x $ZSHHOME ]; then

@@ -1,1 +1,0 @@
-/Users/taku/.zprezto/runcoms/zshenv
