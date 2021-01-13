@@ -14,8 +14,9 @@ repo = 'ryanoasis/vim-devicons'
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
-[[plugins]]
-repo = 'jiangmiao/auto-pairs'
+# 動かすと多重に動くせいかカッコ表示が激烈遅くなる
+# [[plugins]]
+# repo = 'jiangmiao/auto-pairs'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
@@ -124,6 +125,11 @@ let g:lsp_signs_warning = {'text': '‼'}
 
 [[plugins]]
 repo='prabirshrestha/asyncomplete.vim'
+hook_add='''
+	inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+	inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+	inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+'''
 
 [[plugins]]
 repo='prabirshrestha/asyncomplete-lsp.vim'
