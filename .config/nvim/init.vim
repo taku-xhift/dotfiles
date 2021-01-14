@@ -89,6 +89,13 @@ set smartindent
 " スワップファイルを作成しない
 set noswapfile
 
+" https://itchyny.hatenablog.com/entry/2014/12/25/090000
+" 保管の最大表示数を設定
+set pumheight=10
+set showmatch
+set matchtime=1
+nnoremap + <C-a>
+nnoremap - <C-x>
 
 " Escの2回押しでハイライト消去
 nnoremap <C-g><C-g> :nohlsearch<CR><ESC>

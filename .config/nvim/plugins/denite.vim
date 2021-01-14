@@ -37,11 +37,15 @@ function! s:denite_filter_my_settings() abort
 endfunction
 
 " プロジェクト内のファイル検索
-nmap <silent> [denite]M :<C-u>Denite file_rec -highlight-mode-insert=Search<CR>
+" nmap <silent> [denite]M :<C-u>Denite file_rec -highlight-mode-insert=Search<CR>
+nmap <silent> [denite]M :<C-u>Denite file/rec<CR>
 " バッファに展開中のファイル検索
 "nmap <silent> [denite]<C-u> :<C-u>Denite buffer -highlight-mode-insert=Search<CR>
 nmap <silent> [denite]<C-m> :<C-u>Denite buffer<CR>
-"
+" ファイル内の関数/クラス等の検索
+nmap <silent> [denite]<C-O> :<C-u>Denite outline -highlight-mode-insert=Search<CR>
+" dotfiles配下をカレントにしてfile_rec起動
+nmap <silent> [denite]<C-V> :<C-u>call denite#start([{'name': 'file/rec', 'args': ['~/.dotfiles']}]) -highlight-mode-insert=Search=Search<CR>
 
 
 " ファイル内の関数/クラス等の検索
@@ -72,6 +76,26 @@ call denite#custom#source(
 call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
     \ [ '.git/', '.ropeproject/', '__pycache__/',
     \   'venv/', 'images/', '*.min.*', 'img/', 'fonts/', '*.o', '.svn'])
+
+
+	" Specify multiple paths in grep source
+	"call denite#start([{'name': 'grep',
+	"      \ 'args': [['a.vim', 'b.vim'], '', 'pattern']}])
+
+	" Define alias
+	call denite#custom#alias('source', 'file/rec/git', 'file/rec')
+	call denite#custom#var('file/rec/git', 'command',
+	      \ ['git', 'ls-files', '-co', '--exclude-standard'])
+
+	call denite#custom#alias('source', 'file/rec/py', 'file/rec')
+	call denite#custom#var('file/rec/py', 'command',
+	\ ['scantree.py', '--path', ':directory'])
+
+	" Change ignore_globs
+	call denite#custom#filter('matcher/ignore_globs', 'ignore_globs',
+	      \ [ '.git/', '.ropeproject/', '__pycache__/',
+	      \   'venv/', 'images/', '*.min.*', 'img/', 'fonts/'])
+
 
 let s:denite_win_width_percent = 0.85
 let s:denite_win_height_percent = 0.7
