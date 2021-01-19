@@ -21,6 +21,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # alias command
 alias gcm='git commit -m'
+alias gd='git diff'
 alias ls='ls -a'
 alias rmf='rm -fr'
 alias ..='cd ..'

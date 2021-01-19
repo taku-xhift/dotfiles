@@ -1,8 +1,26 @@
 set number
 set incsearch
 set cindent
+set list
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+set inccommand=split
+set tabstop=4
+set shiftwidth=4
+set softtabstop=0
+set autoindent
+set smartindent
+set autoread
+set nobackup
+set noswapfile
+set scrolloff=8					" 上下8行の視界を確保
+set sidescrolloff=16			" 左右スクロール時の視界を確保
+set sidescroll=1				" 左右スクロールは一文字づつ行う" nnoremap <silent> <C-g> <ESC>
+set shellslash					" Windows でもパスの区切り文字を / にする
+set iminsert=2					" インサートモードから抜けると自動的にIMEをオフにする
+set noerrorbells				" エラーメッセージの表示時にビープを鳴らさない
+set cursorline					" カーソルラインをハイライト"
 
-" nnoremap <silent> <C-g> <ESC>
+
 imap <C-g> <esc>
 nnoremap <C-g> <esc>         " Remap in Normal mode
 inoremap <C-g> <esc>         " Remap in Insert and Replace mode
@@ -53,19 +71,6 @@ set incsearch
 " 検索結果をハイライト表示
 set hlsearch
 
-set inccommand=split
-set tabstop=4
-set shiftwidth=4
-set softtabstop=0
-
-"----------------------------------------
-" 表示設定
-"----------------------------------------
-" エラーメッセージの表示時にビープを鳴らさない
-set noerrorbells
-" Windowsでパスの区切り文字をスラッシュで扱う
-set shellslash
-
 
 " メッセージ表示欄を2行確保
 "set cmdheight=2
@@ -76,8 +81,6 @@ set showcmd
 " 省略されずに表示
 set display=lastline
 
-" 行末のスペースを可視化
-set listchars=tab:^\ ,trail:~
 " コマンドラインの履歴を10000件保存する
 set history=10000
 
