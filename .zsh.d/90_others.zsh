@@ -23,13 +23,17 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 alias gcm='git commit -m'
 alias gd='git diff'
 alias ls='ls -a'
-alias rmf='rm -fr'
+# alias rmf='rm -fr'
 alias ..='cd ..'
 alias ..2='cd ../..'
 alias ..3='cd ../../..'
 pss () {
     ps aux | grep -E "PID|$1" | grep -v grep
 }
+ if type trash-put &> /dev/null
+then
+    alias rm=trash-put
+fi    
 
 
 # for tmux start function
