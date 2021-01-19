@@ -19,6 +19,9 @@ set shellslash					" Windows でもパスの区切り文字を / にする
 set iminsert=2					" インサートモードから抜けると自動的にIMEをオフにする
 set noerrorbells				" エラーメッセージの表示時にビープを鳴らさない
 set cursorline					" カーソルラインをハイライト"
+:se list
+:se ff=dos
+fileformats=unix,dos,mac
 
 
 imap <C-g> <esc>
