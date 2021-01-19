@@ -10,6 +10,7 @@ let g:airline_theme = 'papercolor'
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
+let g:airline#extensions#tagbar#enabled = 1
 
 " unicode symbols
 "let g:airline_left_sep = '»'
