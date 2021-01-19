@@ -33,3 +33,10 @@ hook_source = '''
 	nmap <leader>dox :Dox<CR>
 '''
 
+
+[[plugins]]
+repo = 'majutsushi/tagbar'
+hook_add = '''
+	nmap <leader><C-b> :TagbarToggle<CR>
+'''
+
