@@ -36,9 +36,36 @@ then
 fi    
 
 
+function is_osx() { [[ $OSTYPE == darwin* ]]; }
+#
+#
+# https://home.hirosaki-u.ac.jp/heroic-2020/989/
+# https://uguisu.skr.jp/Windows/less_color.html
+# https://qiita.com/akinoriikeda/items/27f95bb1cc8c99ddcbc0
+# https://qiita.com/delphinus/items/b04752bb5b64e6cc4ea9
+export LESS='-i -M -R'
+export PAGER=less
+export LESS_TERMCAP_mb=$'\E[01;31m'      # Begins blinking.
+export LESS_TERMCAP_md=$'\E[01;31m'      # Begins bold.
+export LESS_TERMCAP_me=$'\E[0m'          # Ends mode.
+export LESS_TERMCAP_se=$'\E[0m'          # Ends standout-mode.
+export LESS_TERMCAP_so=$'\E[00;47;30m'   # Begins standout-mode.
+export LESS_TERMCAP_ue=$'\E[0m'          # Ends underline.
+export LESS_TERMCAP_us=$'\E[01;32m'      # Begins underline.
+# if which lesspipe.sh > /dev/null; then
+#     export LESSOPEN='| /usr/share/source-highlight/src-hilite-lesspipe.sh %s'
+# fi
+# if which src-hilite-lesspipe.sh > /dev/null; then
+if is_osx; then
+	export LESSOPEN='| /opt/homebrew/bin/src-hilite-lesspipe.sh %s'
+else
+	export LESSOPEN='| /usr/share/source-highlight/src-hilite-lesspipe.sh %s'
+fi
+
+
+
 # for tmux start function
 function is_exists() { type "$1" >/dev/null 2>&1; return $?; }
-function is_osx() { [[ $OSTYPE == darwin* ]]; }
 function is_screen_running() { [ ! -z "$STY" ]; }
 function is_tmux_runnning() { [ ! -z "$TMUX" ]; }
 function is_screen_or_tmux_running() { is_screen_running || is_tmux_runnning; }
