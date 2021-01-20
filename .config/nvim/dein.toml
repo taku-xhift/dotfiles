@@ -9,23 +9,8 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'ryanoasis/vim-devicons'
-
-[[plugins]]
 repo = 'Shougo/dein.vim'
 
-# 動かすと多重に動くせいかカッコ表示が激烈遅くなる
-# [[plugins]]
-# repo = 'jiangmiao/auto-pairs'
-
-[[plugins]]
-repo = 'vim-airline/vim-airline'
-hook_add = '''
-	source ~/.config/nvim/plugins/airline.vim
-'''
-
-[[plugins]]
-repo = 'vim-airline/vim-airline-themes'
 
 [[plugins]]
 # Yet Another Remote Plugin Framework for Neovim
@@ -43,8 +28,8 @@ hook_add = '''
 [[plugins]]
 repo = 'jistr/vim-nerdtree-tabs'
 hook_add = '''
-    " 起動時有効
-    let g:nerdtree_tabs_open_on_console_startup=1
+	" 起動時有効
+	let g:nerdtree_tabs_open_on_console_startup=1
 '''
 depends = ['nerdtree']
 
@@ -59,14 +44,9 @@ repo = 'roxma/vim-hug-neovim-rpc'
 if = '''!has('nvim')'''
 
 [[plugins]]
-repo = 'neovim/python-client'
-if = '''!has('nvim')'''
-
-[[plugins]]
 repo = 'junegunn/fzf'
 build = './install --all'
 merged = '0'
-
 
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
@@ -85,19 +65,7 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'mattesgroeger/vim-bookmarks'
-hook_add = '''
-	source ~/.config/nvim/plugins/bookmark.vim
-'''
-
-[[plugins]]
 repo = 'machakann/vim-sandwich'
-
-[[plugins]]
-repo = 'scrooloose/nerdcommenter'
-hook_add = '''
-	source ~/.config/nvim/plugins/nerdcommenter.vim
-'''
 
 [[plugins]]
 repo = 'ncm2/float-preview.nvim.git'
