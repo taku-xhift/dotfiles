@@ -33,49 +33,6 @@ hook_source = '''
 	nmap <leader>dox :Dox<CR>
 '''
 
-#
-# [[plugins]]
-# repo = 'majutsushi/tagbar'
-# hook_add = '''
-#     nmap <leader><C-b> :TagbarToggle<CR>
-#     let g:tagbar_show_visibility = 1
-#     let g:tagbar_visibility_symbols = {
-#         \ 'public'    : '+',
-#         \ 'protected' : '#',
-#         \ 'private'   : '-'
-#         \ }
-#     let g:tagbar_show_linenumbers = 2
-#     let g:tagbar_show_tag_linenumbers = 1
-#     let g:tagbar_autoshowtag = 1
-#     let g:tagbar_autopreview = 1
-# '''
-#
-
-
-[[plugins]]
-repo = 'majutsushi/tagbar'
-hook_add = '''
-	nmap <leader><C-b> :TagbarToggle<CR>
-	let g:tagbar_show_visibility = 1
-	let g:tagbar_visibility_symbols = {
-		\ 'public'    : '+',
-		\ 'protected' : '#',
-		\ 'private'   : '-'
-		\ }
-	let g:tagbar_show_linenumbers = 1
-	let g:tagbar_show_tag_linenumbers = 1
-	let g:tagbar_autoshowtag = 1
-	let g:tagbar_autopreview = 1
-'''
-
-[[plugins]]
-repo = 'vim-airline/vim-airline'
-hook_add = '''
-	source ~/.config/nvim/plugins/airline.vim
-'''
-
-[[plugins]]
-repo = 'vim-airline/vim-airline-themes'
 
 # 動かすと多重に動くせいかカッコ表示が激烈遅くなる
 # [[plugins]]
@@ -99,5 +56,23 @@ hook_add = '''
 repo = 'scrooloose/nerdcommenter'
 hook_add = '''
 	source ~/.config/nvim/plugins/nerdcommenter.vim
+'''
+
+# 特定のファイルタイプでハイライトが効果がなくなったりするらしく悩ましい
+# 余計なことをするとすごく後で悩む可能性が。
+# [[plugins]]
+# repo = 'Yggdroot/indentLine'
+# hook_add = '''
+#     let g:indentLine_enabled = 1
+#     let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+#     let g:indentLine_defaultGroup = 'SpecialKey'
+#     set list listchars=tab:\¦\
+# '''
+
+[[plugins]]
+repo = 'junegunn/vim-easy-align'
+hook_add = '''
+	xmap ga <Plug>(EasyAlign)
+	nmap ga <Plug>(EasyAlign)
 '''
 
