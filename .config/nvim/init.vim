@@ -37,6 +37,9 @@ onoremap <C-g> <esc>         " Remap in Operator pending mode
 nnoremap x "_x
 nnoremap s "_s
 
+nnoremap k gk
+nnoremap j gj
+
 "https://postd.cc/how-to-boost-your-vim-productivity/nnoremap
 let mapleader = "\<Space>"
 nnoremap <Leader>w :w<CR>
