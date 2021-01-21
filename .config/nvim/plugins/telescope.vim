@@ -4,6 +4,7 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>fj <cmd>Telescope treesitter<cr>
 
 " " Using lua functions
 " nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
