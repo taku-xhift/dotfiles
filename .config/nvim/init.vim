@@ -124,6 +124,13 @@ imap <C-d> <Del>
 imap <C-h> <BS>
 imap <C-k> <C-r>=<SID>kill()<CR>
 
+
+if has('persistent_undo')
+  set undodir=~/.nvim/undo
+  set undofile
+endif
+
+
 function! s:home()
   let start_column = col('.')
   normal! ^
