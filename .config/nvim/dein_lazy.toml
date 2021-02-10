@@ -76,3 +76,21 @@ hook_add = '''
 	nmap ga <Plug>(EasyAlign)
 '''
 
+[[plugins]]
+repo = 'rhysd/clever-f.vim'
+
+[[plugins]]
+repo = 'kana/vim-operator-user'
+
+[[plugins]]
+repo = 'haya14busa/vim-operator-flashy'
+
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip'
+
+[[plugins]]
+repo = hrsh7th/vim-vsnip-integ'
+hook_add = '''
+	source ~/.config/nvim/plugins/vsnip.vim
+'''
+
