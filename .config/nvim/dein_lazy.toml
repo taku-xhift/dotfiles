@@ -89,7 +89,7 @@ repo = 'haya14busa/vim-operator-flashy'
 repo = 'hrsh7th/vim-vsnip'
 
 [[plugins]]
-repo = hrsh7th/vim-vsnip-integ'
+repo = 'hrsh7th/vim-vsnip-integ'
 hook_add = '''
 	source ~/.config/nvim/plugins/vsnip.vim
 '''
