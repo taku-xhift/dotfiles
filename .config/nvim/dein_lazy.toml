@@ -52,11 +52,11 @@ hook_add = '''
 	source ~/.config/nvim/plugins/bookmark.vim
 '''
 
-[[plugins]]
-repo = 'scrooloose/nerdcommenter'
-hook_add = '''
-	source ~/.config/nvim/plugins/nerdcommenter.vim
-'''
+# [[plugins]]
+# repo = 'scrooloose/nerdcommenter'
+# hook_add = '''
+#     source ~/.config/nvim/plugins/nerdcommenter.vim
+# '''
 
 # 特定のファイルタイプでハイライトが効果がなくなったりするらしく悩ましい
 # 余計なことをするとすごく後で悩む可能性が。
