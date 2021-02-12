@@ -20,8 +20,8 @@ set iminsert=2					" インサートモードから抜けると自動的にIME�
 set noerrorbells				" エラーメッセージの表示時にビープを鳴らさない
 set cursorline					" カーソルラインをハイライト"
 :se list
-:se ff=unix
-fileformats=unix,dos,mac
+" :se ff=unix
+"fileformats=unix,dos,mac
 
 imap <C-g> <esc>
 nnoremap <C-g> <esc>         " Remap in Normal mode
