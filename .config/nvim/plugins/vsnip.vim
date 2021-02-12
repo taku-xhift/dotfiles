@@ -1,5 +1,14 @@
 " NOTE: You can use other key to expand snippet.
 
+let g:completion_enable_snippet = 'vim-vsnip'
+" Enable or disable extra mappings.
+let g:vsnip_extra_mapping = v:true
+
+" Specify user snippet directory.
+let g:vsnip_snippet_dir = expand('~/dotfiles/.config/nvim/snippet/')
+
+
+
 " Expand
 imap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
 smap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
@@ -20,4 +29,9 @@ nmap        s   <Plug>(vsnip-select-text)
 xmap        s   <Plug>(vsnip-select-text)
 nmap        S   <Plug>(vsnip-cut-text)
 xmap        S   <Plug>(vsnip-cut-text)
+
+" " If you want to use snippet for multiple filetypes, you can `g:vsnip_filetypes` for it.
+" let g:vsnip_filetypes = {}
+" let g:vsnip_filetypes.javascriptreact = ['javascript']
+" let g:vsnip_filetypes.typescriptreact = ['typescript']
 
