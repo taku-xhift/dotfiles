@@ -39,9 +39,6 @@ hook_source = '''
 # repo = 'jiangmiao/auto-pairs'
 
 [[plugins]]
-repo = 'ryanoasis/vim-devicons'
-
-[[plugins]]
 repo = 'neovim/python-client'
 if = '''!has('nvim')'''
 
