@@ -1,14 +1,5 @@
 
 [[plugins]]
-repo = 'bluz71/vim-moonfly-colors'
-hook_add = '''
-	set background=dark
-	set termguicolors " if you want to run vim in a terminal
-	let g:moonflyCursorColor = 1
-	colorscheme moonfly
-'''
-
-[[plugins]]
 repo = 'Shougo/dein.vim'
 
 
@@ -17,6 +8,15 @@ repo = 'Shougo/dein.vim'
 repo = 'Shougo/denite.nvim'
 hook_add = '''
 	source ~/.config/nvim/plugins/denite.vim
+'''
+
+[[plugins]]
+repo = 'bluz71/vim-moonfly-colors'
+hook_add = '''
+	set background=dark
+	set termguicolors " if you want to run vim in a terminal
+	let g:moonflyCursorColor = 1
+	colorscheme moonfly
 '''
 
 [[plugins]]
