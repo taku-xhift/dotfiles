@@ -14,7 +14,7 @@ on_ft = ['toml']
 
 [[plugins]]
 repo = 'kentarosasaki/vim-emacs-bindings'
-on_i = 1
+on_event = 'InsertEnter'
 
 # [[plugins]]
 # repo = 'Shougo/neoinclude.vim'
