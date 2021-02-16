@@ -22,6 +22,7 @@ set cursorline					" カーソルラインをハイライト"
 :se list
 " :se ff=unix
 "fileformats=unix,dos,mac
+set encoding=utf8
 
 imap <C-g> <esc>
 nnoremap <C-g> <esc>         " Remap in Normal mode
@@ -129,34 +130,6 @@ if has('persistent_undo')
   set undodir=~/.nvim/undo
   set undofile
 endif
-
-
-function! s:home()
-  let start_column = col('.')
-  normal! ^
-  if col('.') == start_column
-  ¦ normal! 0
-  endif
-  return ''
-endfunction
-
-function! s:kill()
-  let [text_before, text_after] = s:split_line()
-  if len(text_after) == 0
-  ¦ normal! J
-  else
-  ¦ call setline(line('.'), text_before)
-  endif
-  return ''
-endfunction
-
-function! s:split_line()
-  let line_text = getline(line('.'))
-  let text_after  = line_text[col('.')-1 :]
-  let text_before = (col('.') > 1) ? line_text[: col('.')-2] : ''
-  return [text_before, text_after]
-endfunction
-
 
 
 " setting of dein
