@@ -1,7 +1,7 @@
 
 " Denite用プレフィックス
 nmap [denite] <Nop>
-map <C-m> [denite]
+map <C-,> [denite]
 
 
 call denite#custom#option('default', 'prompt', '>')

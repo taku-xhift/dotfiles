@@ -46,13 +46,6 @@ hook_source = '''
 repo = 'neovim/python-client'
 if = '''!has('nvim')'''
 
-
-[[plugins]]
-repo = 'mattesgroeger/vim-bookmarks'
-hook_add = '''
-	source ~/.config/nvim/plugins/bookmark.vim
-'''
-
 # [[plugins]]
 # repo = 'scrooloose/nerdcommenter'
 # hook_add = '''

@@ -168,3 +168,9 @@ hook_add = '''
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
+[[plugins]]
+repo = 'MattesGroeger/vim-bookmarks'
+hook_add = '''
+	source ~/.config/nvim/plugins/bookmark.vim
+'''
+
