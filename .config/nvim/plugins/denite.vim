@@ -1,7 +1,7 @@
 
 " Denite用プレフィックス
 nmap [denite] <Nop>
-map <C-,> [denite]
+map <C-a> [denite]
 
 
 call denite#custom#option('default', 'prompt', '>')
@@ -15,7 +15,7 @@ function! s:denite_my_settings() abort
   \ denite#do_map('do_action', 'delete')
   nnoremap <silent><buffer><expr> p
   \ denite#do_map('do_action', 'preview')
-  nnoremap <silent><buffer><expr> q
+  nnoremap <silent><buffer><expr> <ESC>
   \ denite#do_map('quit')
   nnoremap <silent><buffer><expr> i
   \ denite#do_map('open_filter_buffer')
