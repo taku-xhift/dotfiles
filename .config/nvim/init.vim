@@ -5,6 +5,7 @@ set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 set inccommand=split
 set tabstop=4
+set smarttab
 set shiftwidth=4
 set softtabstop=0
 set autoindent
