@@ -48,6 +48,10 @@ nnoremap <Leader>w :w<CR>
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
+
+nnoremap <silent> <C-[> :bprev<CR>
+nnoremap <silent> <C-]> :bnext<CR>
+
 "https://qiita.com/delphinus/items/a202d0724a388f6cdbc3
 set termguicolors    " ターミナルでも True Color を使えるようにする。
 "set pumblend=10      " 0 〜 100 が指定できます。ドキュメントによると 5 〜 30 くらいが適当だそうです。
