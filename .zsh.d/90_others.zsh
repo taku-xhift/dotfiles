@@ -12,8 +12,10 @@ setopt no_beep
 # ビープ音の停止(補完時)
 setopt nolistbeep
 
-# 同じコマンドをヒストリに残さない
-setopt hist_ignore_all_dups
+export HISTSIZE=1000			# メモリに保存される履歴の件数
+export SAVEHIST=100000			# 履歴ファイルに保存される履歴の件数
+setopt hist_ignore_dups			# 重複を記録しない
+setopt hist_ignore_all_dups		# 同じコマンドをヒストリに残さない
 
 # 補完で小文字でも大文字にマッチさせる
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
