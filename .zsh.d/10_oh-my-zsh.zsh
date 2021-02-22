@@ -69,7 +69,7 @@ ZSH_THEME="fino-time"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting zsh-completions)
+plugins=(git zsh-syntax-highlighting zsh-completions zsh-autosuggestions)
 
 # zsh-completionsの設定
 autoload -U compinit && compinit -u
