@@ -9,3 +9,5 @@ if [ -d $ZSHHOME -a -r $ZSHHOME -a \
     done
 fi
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
