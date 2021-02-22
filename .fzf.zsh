@@ -1,6 +1,7 @@
 # Setup fzf
 
 FZFHOME=/opt/homebrew/opt/fzf
+# FZFHOME=/home/taku/.cache/dein/repos/github.com/junegunn/fzf
 
 # ---------
 if [[ ! "$PATH" == *$FZFHOME/bin* ]]; then
