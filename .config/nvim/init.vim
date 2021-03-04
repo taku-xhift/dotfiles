@@ -49,8 +49,8 @@ vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
 
-nnoremap <silent> <C-[> :bprev<CR>
-nnoremap <silent> <C-]> :bnext<CR>
+nnoremap <silent> <S-Left[> :bp<CR>
+nnoremap <silent> <S-Right]> :bn<CR>
 
 "https://qiita.com/delphinus/items/a202d0724a388f6cdbc3
 set termguicolors    " ターミナルでも True Color を使えるようにする。
