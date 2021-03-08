@@ -172,3 +172,21 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
+function! s:changeBackground()
+  for buf in getbufinfo()
+    if buf.name =~ '\[denite\]$'
+      return
+    endif
+  endfor
+  highlight Normal guibg=default
+  highlight NormalNC guibg='#27292d'
+endfunction
+
+augroup ChangeBackground
+  autocmd!
+  autocmd WinEnter * call s:changeBackground()
+  autocmd FocusGained * highlight Normal guibg=default
+  autocmd FocusLost * highlight Normal guibg='#27292d'
+augroup END
+
+
