@@ -9,6 +9,7 @@ let g:bookmark_auto_save = 1
 let g:bookmark_auto_close = 1
 
 nmap <Leader>bb <Plug>BookmarkToggle
+" nmap <C-F2> <Plug>BookmarkToggle
 " nmap <Leader>i <Plug>BookmarkAnnotate
 nmap <Leader>ba <Plug>BookmarkShowAll
 nmap <Leader><C-b> <Plug>BookmarkNext
