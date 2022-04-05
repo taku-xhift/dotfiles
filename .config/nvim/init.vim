@@ -38,6 +38,7 @@ set iminsert=0          " インサートモードから抜けると自動的に
 set noerrorbells        " エラーメッセージの表示時にビープを鳴らさない
 set cursorline          " カーソルラインをハイライト"
 
+autocmd! FileType haxe setlocal expandtab
 
 imap <C-g> <esc>
 nnoremap <C-g> <esc>         " Remap in Normal mode
