@@ -1,5 +1,6 @@
 # echo $(pwd -P)
 ZSHHOME="${HOME}/.zsh.d"
+# ZSHHOME="/home/taku/.zsh.d"
 
 if [ -d $ZSHHOME -a -r $ZSHHOME -a \
      -x $ZSHHOME ]; then

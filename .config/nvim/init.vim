@@ -6,6 +6,12 @@ scriptencoding utf-8
 " stop loading config if it's on tiny or small
 if !1 | finish | endif
 
+let g:comfortable_motion_interval = 2400.0 / 60
+let g:comfortable_motion_friction = 100.0
+let g:comfortable_motion_air_drag = 3.0
+let g:comfortable_motion_scroll_down_key = "j"
+let g:comfortable_motion_scroll_up_key = "k"
+
 set nocompatible
 set number
 syntax enable
@@ -151,8 +157,6 @@ set lazyredraw
 set showmatch
 " How many tenths of a second to blink when matching brackets
 "set mat=2
-" Be smart when using tabs ;)
-set smarttab
 " indents
 filetype plugin indent on
 set shiftwidth=4
@@ -163,13 +167,6 @@ set backspace=start,eol,indent
 " Finding files - Search down into subfolders
 set path+=**
 set wildignore+=*/node_modules/*
-
-" Turn off paste mode when leaving insert
-autocmd InsertLeave * set nopaste
-
-" Add asterisks in block comments
-" set formatoptions+=r
-
 
 set cursorline
 "set cursorcolumn
@@ -210,6 +207,13 @@ set suffixesadd=.js,.es,.jsx,.json,.css,.less,.sass,.styl,.php,.py,.md
 autocmd FileType coffee setlocal shiftwidth=2 tabstop=2
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
+autocmd FileType h,hpp,c,cpp setlocal expandtab shiftwidth=2 tabstop=2
+  " au BufRead,BufNewFile *.cpp expandtab shiftwidth=2 tabstop=2
+
+augroup filetypedetect
+  au BufRead,BufNewFile *.hx expandtab
+augroup END
+
 
 runtime ./plug.vim
 if has("unix")
@@ -240,6 +244,7 @@ syntax enable
  " let g:moonflyCursorColor = 1↲
   " let g:lightline = { 'colorscheme': 'moonfly' }
   colorscheme moonfly
+  " colorscheme nord
 endif
 
 set exrc

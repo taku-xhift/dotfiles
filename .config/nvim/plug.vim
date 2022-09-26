@@ -54,6 +54,10 @@ if has("nvim")
   Plug 'rhysd/vim-operator-surround'
   Plug 'kana/vim-textobj-user'
   Plug 'osyo-manga/vim-textobj-multiblock'
+  Plug 'yuttie/comfortable-motion.vim'
+  Plug 'terryma/vim-expand-region'
+  Plug 'Yggdroot/indentLine'
+
 
   " Plug 'kyazdani42/nvim-web-devicons'
   Plug 'romgrk/barbar.nvim'
