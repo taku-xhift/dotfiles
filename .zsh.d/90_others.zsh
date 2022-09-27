@@ -24,8 +24,9 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # alias command
 alias gcm='git commit -m'
 alias gd='git diff'
-alias ls='ls -a'
+alias ls='ls -aF --color=auto --width=120'
 # alias rmf='rm -fr'
+alias bat='batcat -A'
 alias ..='cd ..'
 alias ..2='cd ../..'
 alias ..3='cd ../../..'
@@ -37,6 +38,12 @@ then
     alias rm=trash-put
 fi    
 
+# --------------------------------------------------
+#  $ tree でディレクトリ構成表示
+# --------------------------------------------------
+
+# alias tree="pwd;find . | sort | sed '1d;s/^\.//;s/\/\([^/]*\)$/|--\1/;s/\/[^/|]*/| /g'"
+alias tree="tree -al"
 
 function is_osx() { [[ $OSTYPE == darwin* ]]; }
 #

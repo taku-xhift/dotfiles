@@ -1,29 +1,50 @@
+
+" init autocmd
+autocmd!
+" set script encoding
+scriptencoding utf-8
+" stop loading config if it's on tiny or small
+if !1 | finish | endif
+
+let g:comfortable_motion_interval = 2400.0 / 60
+let g:comfortable_motion_friction = 100.0
+let g:comfortable_motion_air_drag = 3.0
+let g:comfortable_motion_scroll_down_key = "j"
+let g:comfortable_motion_scroll_up_key = "k"
+
+set nocompatible
 set number
-set incsearch
-set cindent
+syntax enable
+set fileencodings=utf-8,sjis,euc-jp,latin
+set encoding=utf-8
+set title
+set autoindent
+set background=dark
+set nobackup
+set hlsearch
+set showcmd
+set cmdheight=1
+set laststatus=2
+set scrolloff=10
+" set expandtab
+"let loaded_matchparen = 1
+set shell=zsh
+set backupskip=/tmp/*,/private/tmp/*
 set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
-set inccommand=split
 set tabstop=4
 set smarttab
-set shiftwidth=4
-set softtabstop=0
-set autoindent
-set smartindent
-set autoread
 set nobackup
 set noswapfile
-set scrolloff=8					" 上下8行の視界を確保
-set sidescrolloff=16			" 左右スクロール時の視界を確保
-set sidescroll=1				" 左右スクロールは一文字づつ行う" nnoremap <silent> <C-g> <ESC>
-set shellslash					" Windows でもパスの区切り文字を / にする
-set iminsert=2					" インサートモードから抜けると自動的にIMEをオフにする
-set noerrorbells				" エラーメッセージの表示時にビープを鳴らさない
-set cursorline					" カーソルラインをハイライト"
-:se list
-" :se ff=unix
-"fileformats=unix,dos,mac
-set encoding=utf8
+set scrolloff=8         " 上下8行の視界を確保
+set sidescrolloff=16      " 左右スクロール時の視界を確保
+set sidescroll=1        " 左右スクロールは一文字づつ行う" nnoremap <silent> <C-g> <ESC>
+set shellslash          " Windows でもパスの区切り文字を / にする
+set iminsert=0          " インサートモードから抜けると自動的にIMEをオフにする
+set noerrorbells        " エラーメッセージの表示時にビープを鳴らさない
+set cursorline          " カーソルラインをハイライト"
+
+autocmd! FileType haxe setlocal expandtab
 
 imap <C-g> <esc>
 nnoremap <C-g> <esc>         " Remap in Normal mode
@@ -33,7 +54,6 @@ xnoremap <C-g> <esc>         " Remap in Visual mode
 snoremap <C-g> <esc>         " Remap in Select mode
 cnoremap <C-g> <C-C>         " Remap in Command-line mode
 onoremap <C-g> <esc>         " Remap in Operator pending mode
-
 " https://qiita.com/itmammoth/items/312246b4b7688875d023
 " xやsではヤンクしない
 nnoremap x "_x
@@ -42,31 +62,19 @@ nnoremap s "_s
 nnoremap k gk
 nnoremap j gj
 
+
 "https://postd.cc/how-to-boost-your-vim-productivity/nnoremap
 let mapleader = "\<Space>"
 nnoremap <Leader>w :w<CR>
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
+" nnoremap <silent> <S-Left[> :bp<CR>
+" nnoremap <silent> <S-Right]> :bn<CR>
 
-nnoremap <silent> <S-Left[> :bp<CR>
-nnoremap <silent> <S-Right]> :bn<CR>
 
-"https://qiita.com/delphinus/items/a202d0724a388f6cdbc3
-set termguicolors    " ターミナルでも True Color を使えるようにする。
-"set pumblend=10      " 0 〜 100 が指定できます。ドキュメントによると 5 〜 30 くらいが適当だそうです。
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+set mouse=a
 
-" 以下はおまけ。ここでは Denite の設定を載せていますが、
-" 同様の仕組みで任意のウィンドウを半透明化できるでしょう。
-augroup transparent-windows
-  autocmd!
-  autocmd FileType denite set winblend=10  " こちらも 5 〜 30 で試してみてください。
-  autocmd FileType denite-filter set winblend=10
-augroup END
-" 文字の色を黒、背景色を緑に変更
-hi NormalFloat guifg=#2e3440 guibg=#5e81ac
 
 "----------------------------------------
 " 検索
@@ -82,7 +90,6 @@ set incsearch
 " 検索結果をハイライト表示
 set hlsearch
 
-
 " メッセージ表示欄を2行確保
 "set cmdheight=2
 " ステータス行を常に表示
@@ -92,8 +99,6 @@ set showcmd
 " 省略されずに表示
 set display=lastline
 
-" コマンドラインの履歴を10000件保存する
-set history=10000
 
 
 " 対応する括弧を強調表示
@@ -137,56 +142,193 @@ if has('persistent_undo')
 endif
 
 
-" setting of dein
-if &compatible
-  set nocompatible
-endif
-" Add the dein installation directory into runtimepath
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
-if dein#load_state('~/.cache/dein')
-	call dein#begin('~/.cache/dein')
-
-	if dein#check_install()
-		call dein#install()
-	endif
-
-	call dein#load_toml('~/.config/nvim/dein.toml',			{'lazy': 0})
-	call dein#load_toml('~/.config/nvim/dein_lazy.toml',	{'lazy': 1})
-
-	call dein#end()
-	call dein#save_state()
+" incremental substitution (neovim)
+if has('nvim')
+  set inccommand=split
 endif
 
+" Suppress appending <PasteStart> and <PasteEnd> when pasting
+set t_BE=
+
+set nosc noru nosm
+" Don't redraw while executing macros (good performance config)
+set lazyredraw
+set showmatch
+" How many tenths of a second to blink when matching brackets
+"set mat=2
+" indents
 filetype plugin indent on
-syntax enable
+set shiftwidth=4
+set ai "Auto indent
+set si "Smart indent
+set nowrap "No Wrap lines
+set backspace=start,eol,indent
+" Finding files - Search down into subfolders
+set path+=**
+set wildignore+=*/node_modules/*
 
+set cursorline
+"set cursorcolumn
 
-" for tree-sitter
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  highlight = {
-    enable = true,              -- false will disable the whole extension
-  },
-}
-EOF
+" Set cursor line color on visual mode
+highlight Visual cterm=NONE ctermbg=236 ctermfg=NONE guibg=Grey40
 
-function! s:changeBackground()
-  for buf in getbufinfo()
-    if buf.name =~ '\[denite\]$'
-      return
-    endif
-  endfor
-  highlight Normal guibg=default
-  highlight NormalNC guibg='#27292d'
-endfunction
+highlight LineNr cterm=none ctermfg=240 guifg=#2b506e guibg=#000000
 
-augroup ChangeBackground
+augroup BgHighlight
   autocmd!
-  autocmd WinEnter * call s:changeBackground()
-  autocmd FocusGained * highlight Normal guibg=default
-  autocmd FocusLost * highlight Normal guibg='#27292d'
+  autocmd WinEnter * set cul
+  autocmd WinLeave * set nocul
 augroup END
 
+if &term =~ "screen"
+  autocmd BufEnter * if bufname("") !~ "^?[A-Za-z0-9?]*://" | silent! exe '!echo -n "\ek[`hostname`:`basename $PWD`/`basename %`]\e\\"' | endif
+  autocmd VimLeave * silent!  exe '!echo -n "\ek[`hostname`:`basename $PWD`]\e\\"'
+endif
+
+" JavaScript
+au BufNewFile,BufRead *.es6 setf javascript
+" TypeScript
+au BufNewFile,BufRead *.tsx setf typescriptreact
+" Markdown
+au BufNewFile,BufRead *.md set filetype=markdown
+au BufNewFile,BufRead *.mdx set filetype=markdown
+" Flow
+au BufNewFile,BufRead *.flow set filetype=javascript
+" Fish
+au BufNewFile,BufRead *.fish set filetype=fish
+" cpp
+au BufNewFile,BufRead *.h set filetype=cpp
+au BufNewFile,BufRead *.hpp set filetype=cpp
+
+set suffixesadd=.js,.es,.jsx,.json,.css,.less,.sass,.styl,.php,.py,.md
+
+autocmd FileType coffee setlocal shiftwidth=2 tabstop=2
+autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
+autocmd FileType h,hpp,c,cpp setlocal expandtab shiftwidth=2 tabstop=2
+  " au BufRead,BufNewFile *.cpp expandtab shiftwidth=2 tabstop=2
+
+augroup filetypedetect
+  au BufRead,BufNewFile *.hx expandtab
+augroup END
+
+
+runtime ./plug.vim
+if has("unix")
+  let s:uname = system("uname -s")
+  " Do Mac stuff
+  if s:uname == "Darwin\n"
+    runtime ./macos.vim
+  endif
+endif
+if has('win32')
+  runtime ./windows.vim
+endif
+
+runtime ./maps.vim
+
+" true color
+if exists("&termguicolors") && exists("&winblend")
+syntax enable
+  set termguicolors
+  set winblend=0
+  set wildoptions=pum
+  set pumblend=5
+  set background=dark
+  " Use NeoSolarized
+  " let g:neosolarized_termtrans=1
+  " runtime ./colors/NeoSolarized.vim
+  " colorscheme NeoSolarized
+ " let g:moonflyCursorColor = 1↲
+  " let g:lightline = { 'colorscheme': 'moonfly' }
+  colorscheme moonfly
+  " colorscheme nord
+endif
+
+set exrc
+
+
+" vim: set foldmethod=marker foldlevel=0:
+
+lua << EOF
+  -- Setup nvim-cmp.
+  local cmp = require'cmp'
+  local lspkind = require('lspkind')
+
+  cmp.setup({
+    preselect = cmp.PreselectMode.None,
+    snippet = {
+      expand = function(args)
+        -- For `vsnip` user.
+        -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` user.
+
+        -- For `luasnip` user.
+        -- require('luasnip').lsp_expand(args.body)
+
+        -- For `ultisnips` user.
+        -- vim.fn["UltiSnips#Anon"](args.body)
+      end,
+    },
+    mapping = {
+      -- ['<C-i>'] = cmp.mapping.complete(),
+      ['<C-e>'] = cmp.mapping.close(),
+      ['<C-i>'] = function(fallback)
+        if cmp.visible() then
+          cmp.select_next_item()
+        else
+          fallback()
+        end
+      end
+    },
+    sources = {
+      { name = 'nvim_lsp' },
+
+      -- For vsnip user.
+      -- { name = 'vsnip' },
+
+      -- For luasnip user.
+      -- { name = 'luasnip' },
+
+      -- For ultisnips user.
+      -- { name = 'ultisnips' },
+
+      { name = 'buffer' },
+      { name = 'path' },
+      { name = 'treesitter' },
+    },
+    -- formatting = {
+    --   format = lspkind.cmp_format({
+    --     with_text = false, -- do not show text alongside icons
+    --     maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+
+    --     -- The function below will be called before any actual modifications from lspkind
+    --     -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+    --     before = function (entry, vim_item)
+    --       return vim_item
+    --     end
+    --   })
+    -- }
+  })
+
+
+  -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+  cmp.setup.cmdline('/', {
+    sources = {
+      { name = 'buffer' }
+    }
+  })
+
+  -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+  cmp.setup.cmdline(':', {
+    sources = cmp.config.sources({
+      { name = 'path' }
+    }, {
+      { name = 'cmdline' }
+    })
+  })
+
+
+EOF
 
