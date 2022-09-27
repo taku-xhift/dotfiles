@@ -1,10 +1,13 @@
 
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+function is_osx() { [[ $OSTYPE == darwin* ]]; }
 
-# for llvm
-export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+if ! is_osx; then
+	export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
+	# for llvm
+	export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+	export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+fi
 
 # ビープ音の停止
 setopt no_beep
@@ -24,7 +27,9 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # alias command
 alias gcm='git commit -m'
 alias gd='git diff'
-alias ls='ls -aF --color=auto --width=120'
+if ! is_osx; then
+	alias ls='ls -aF --color=auto --width=120'
+fi
 # alias rmf='rm -fr'
 alias bat='batcat -A'
 alias ..='cd ..'
@@ -44,8 +49,6 @@ fi
 
 # alias tree="pwd;find . | sort | sed '1d;s/^\.//;s/\/\([^/]*\)$/|--\1/;s/\/[^/|]*/| /g'"
 alias tree="tree -al"
-
-function is_osx() { [[ $OSTYPE == darwin* ]]; }
 #
 #
 # https://home.hirosaki-u.ac.jp/heroic-2020/989/
