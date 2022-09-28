@@ -27,8 +27,10 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # alias command
 alias gcm='git commit -m'
 alias gd='git diff'
-if ! is_osx; then
-	alias ls='ls -aF --color=auto --width=120'
+if is_osx; then
+	alias ls='ls -AFLG'
+else
+	alias ls='ls -AFLG --width=120'
 fi
 # alias rmf='rm -fr'
 alias bat='batcat -A'
@@ -41,7 +43,7 @@ pss () {
  if type trash-put &> /dev/null
 then
     alias rm=trash-put
-fi    
+fi
 
 # --------------------------------------------------
 #  $ tree でディレクトリ構成表示
@@ -49,8 +51,8 @@ fi
 
 # alias tree="pwd;find . | sort | sed '1d;s/^\.//;s/\/\([^/]*\)$/|--\1/;s/\/[^/|]*/| /g'"
 alias tree="tree -al"
-#
-#
+
+
 # https://home.hirosaki-u.ac.jp/heroic-2020/989/
 # https://uguisu.skr.jp/Windows/less_color.html
 # https://qiita.com/akinoriikeda/items/27f95bb1cc8c99ddcbc0
