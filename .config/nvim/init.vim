@@ -43,6 +43,9 @@ set shellslash          " Windows でもパスの区切り文字を / にする
 set iminsert=0          " インサートモードから抜けると自動的にIMEをオフにする
 set noerrorbells        " エラーメッセージの表示時にビープを鳴らさない
 set cursorline          " カーソルラインをハイライト"
+set foldcolumn=1        " 折りたたみ箇所を表示
+set foldopen=tag,undo   " 折りたたみ内に移動する場合に開く条件。他には block,hor,mark,percent,quickfix,search
+" set foldmethod=indent   " 折り畳み基準をインデントにする
 
 autocmd! FileType haxe setlocal expandtab
 
@@ -207,7 +210,7 @@ set suffixesadd=.js,.es,.jsx,.json,.css,.less,.sass,.styl,.php,.py,.md
 autocmd FileType coffee setlocal shiftwidth=2 tabstop=2
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
-autocmd FileType h,hpp,c,cpp setlocal expandtab shiftwidth=2 tabstop=2
+" autocmd FileType h,hpp,c,cpp setlocal expandtab shiftwidth=2 tabstop=2
   " au BufRead,BufNewFile *.cpp expandtab shiftwidth=2 tabstop=2
 
 augroup filetypedetect
