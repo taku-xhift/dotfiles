@@ -28,6 +28,7 @@ if has("nvim")
   Plug 'hrsh7th/nvim-cmp'
   Plug 'onsails/lspkind-nvim'
   Plug 'ray-x/cmp-treesitter'
+  Plug 'tom-anders/telescope-vim-bookmarks.nvim'
 
 
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
