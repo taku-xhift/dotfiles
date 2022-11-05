@@ -11,3 +11,5 @@
 .config/xbuild/
 
 .config/karabiner/assets/complex_modifications/
+
+.config/gh/hosts.yml
