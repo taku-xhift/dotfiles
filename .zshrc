@@ -2,6 +2,8 @@
 ZSHHOME="${HOME}/.zsh.d"
 # ZSHHOME="/home/taku/.zsh.d"
 
+function is_osx() { [[ $OSTYPE == darwin* ]]; }
+
 if [ -d $ZSHHOME -a -r $ZSHHOME -a \
      -x $ZSHHOME ]; then
     for i in $ZSHHOME/*; do
