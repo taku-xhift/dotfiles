@@ -162,27 +162,28 @@ nvim_lsp.flow.setup {
 
 
 nvim_lsp.clangd.setup({
-        cmd = { "clangd" },
-        filetypes = { "c", "cpp" },
-        on_attach = on_attach,
-        -- root_dir = lspconfig.util.root_pattern("*.hxml"),
-        nvim_lsp.util.root_pattern("compile_commands.json", "compile_flags.txt", ".git"),
+	cmd = { "clangd" },
+	filetypes = { "c", "cpp" },
+	on_attach = on_attach,
+	-- root_dir = lspconfig.util.root_pattern("*.hxml"),
+	nvim_lsp.util.root_pattern("compile_commands.json", "compile_flags.txt", ".git"),
 });
 
 nvim_lsp.haxe_language_server.setup({
-        cmd = {"node", "/home/taku/.local/share/nvim/lsp_servers/haxe_language_server/bin/server.js"},
-        --cmd = { "haxe-language-server" },
-        filetypes = { "haxe" },
-        init_options = {
-                displayArguments = { "build.hxml" }
-        },
-        on_attach = on_attach,
-        -- root_dir = lspconfig.util.root_pattern("*.hxml"),
-        settings = {
-                haxe = {
-                        executable = "haxe"
-                }
-        }
+	cmd = {"node", "/home/taku/.local/share/nvim/lsp_servers/haxe_language_server/bin/server.js"},
+	--cmd = { "haxe-language-server" },
+	filetypes = { "haxe" },
+	init_options = {
+		--displayArguments = { "build.hxml" }
+		displayArguments = { "project_root.hxml" }
+	},
+	on_attach = on_attach,
+	-- root_dir = lspconfig.util.root_pattern("*.hxml"),
+	settings = {
+		haxe = {
+			executable = "haxe"
+		}
+	}
 });
 
 
