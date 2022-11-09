@@ -39,6 +39,7 @@ if has("nvim")
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'windwp/nvim-autopairs'
   Plug 'windwp/nvim-ts-autotag'
+  Plug 'octol/vim-cpp-enhanced-highlight'
 
   Plug 'williamboman/nvim-lsp-installer'
   Plug 'bluz71/vim-moonfly-colors'
