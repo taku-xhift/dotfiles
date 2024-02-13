@@ -161,7 +161,7 @@ set suffixesadd=.js,.es,.jsx,.json,.css,.less,.sass,.styl,.php,.py,.md
 autocmd FileType coffee setlocal shiftwidth=2 tabstop=2
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
-" autocmd FileType h,hpp,c,cpp setlocal expandtab shiftwidth=2 tabstop=2
+autocmd FileType h,hpp,c,cpp setlocal expandtab shiftwidth=2 tabstop=2
   " au BufRead,BufNewFile *.cpp expandtab shiftwidth=2 tabstop=2
 
 augroup filetypedetect

@@ -9,16 +9,17 @@ Plug 'tpope/vim-rhubarb'
 
 if has("nvim")
   Plug 'hoob3rt/lualine.nvim'
-  Plug 'kristijanhusak/defx-git'
-  Plug 'kristijanhusak/defx-icons'
-  Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'neovim/nvim-lspconfig'
-  Plug 'tami5/lspsaga.nvim', { 'branch': 'nvim6.0' }
+  " Plug 'kristijanhusak/defx-git'
+  " Plug 'kristijanhusak/defx-icons'
+  " Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'tami5/lspsaga.nvim'
   Plug 'folke/lsp-colors.nvim'
   Plug 'L3MON4D3/LuaSnip'
   " lsp
   Plug 'neovim/nvim-lspconfig'
   Plug 'williamboman/nvim-lsp-installer'
+  " Plug "williamboman/mason.nvim"
+  " Plug "williamboman/mason-lspconfig.nvim"
   Plug 'ray-x/lsp_signature.nvim'
   " auto complete
   Plug 'hrsh7th/cmp-buffer'
@@ -28,20 +29,20 @@ if has("nvim")
   Plug 'hrsh7th/nvim-cmp'
   Plug 'onsails/lspkind-nvim'
   Plug 'ray-x/cmp-treesitter'
-  Plug 'tom-anders/telescope-vim-bookmarks.nvim'
+  Plug 'ivechan/gtags.vim'
 
 
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-  Plug 'kyazdani42/nvim-web-devicons'
   Plug 'onsails/lspkind-nvim'
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
+  Plug 'tom-anders/telescope-vim-bookmarks.nvim'
+  Plug 'nvim-telescope/telescope-file-browser.nvim'
   Plug 'windwp/nvim-autopairs'
   Plug 'windwp/nvim-ts-autotag'
   Plug 'octol/vim-cpp-enhanced-highlight'
 
-  Plug 'williamboman/nvim-lsp-installer'
   Plug 'bluz71/vim-moonfly-colors'
   Plug 'preservim/nerdtree'
   Plug 'scrooloose/nerdcommenter'
@@ -59,14 +60,15 @@ if has("nvim")
   Plug 'yuttie/comfortable-motion.vim'
   Plug 'terryma/vim-expand-region'
   Plug 'Yggdroot/indentLine'
+  Plug 'RRethy/vim-illuminate'
 
 
-  " Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'kyazdani42/nvim-web-devicons'
   Plug 'romgrk/barbar.nvim'
 endif
 
 Plug 'groenewege/vim-less', { 'for': 'less' }
-Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
+" Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 
 call plug#end()
 
