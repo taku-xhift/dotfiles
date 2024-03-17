@@ -31,7 +31,6 @@ if has("nvim")
   Plug 'ray-x/cmp-treesitter'
   Plug 'ivechan/gtags.vim'
 
-
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
   Plug 'onsails/lspkind-nvim'
   Plug 'nvim-lua/popup.nvim'
@@ -39,6 +38,7 @@ if has("nvim")
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'tom-anders/telescope-vim-bookmarks.nvim'
   Plug 'nvim-telescope/telescope-file-browser.nvim'
+  Plug 'ivechan/telescope-gtags'
   Plug 'windwp/nvim-autopairs'
   Plug 'windwp/nvim-ts-autotag'
   Plug 'octol/vim-cpp-enhanced-highlight'
