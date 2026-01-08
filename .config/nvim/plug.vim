@@ -20,7 +20,7 @@ if has("nvim")
   Plug 'williamboman/nvim-lsp-installer'
   " Plug "williamboman/mason.nvim"
   " Plug "williamboman/mason-lspconfig.nvim"
-  Plug 'ray-x/lsp_signature.nvim'
+  " Plug 'ray-x/lsp_signature.nvim'
   " auto complete
   Plug 'hrsh7th/cmp-buffer'
   Plug 'hrsh7th/cmp-cmdline'
@@ -28,7 +28,7 @@ if has("nvim")
   Plug 'hrsh7th/cmp-path'
   Plug 'hrsh7th/nvim-cmp'
   Plug 'onsails/lspkind-nvim'
-  Plug 'ray-x/cmp-treesitter'
+  " Plug 'ray-x/cmp-treesitter'
   Plug 'ivechan/gtags.vim'
 
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
@@ -62,9 +62,17 @@ if has("nvim")
   Plug 'Yggdroot/indentLine'
   Plug 'RRethy/vim-illuminate'
 
+  Plug 'walkersumida/fusen.nvim'				" 付箋付けれる
+  Plug 'kevinhwang91/nvim-bqf'					" quick fix
 
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'romgrk/barbar.nvim'
+
+  Plug 'emmanueltouzery/key-menu.nvim'			" キーマップが出るようになる
+
+  Plug 'kevinhwang91/promise-async'
+  Plug 'kevinhwang91/nvim-ufo'
+
 endif
 
 Plug 'groenewege/vim-less', { 'for': 'less' }

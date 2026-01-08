@@ -150,16 +150,12 @@ au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.mdx set filetype=markdown
 " Flow
 au BufNewFile,BufRead *.flow set filetype=javascript
-" Fish
-au BufNewFile,BufRead *.fish set filetype=fish
 " cpp
 au BufNewFile,BufRead *.h set filetype=cpp
 au BufNewFile,BufRead *.hpp set filetype=cpp
 
 set suffixesadd=.js,.es,.jsx,.json,.css,.less,.sass,.styl,.php,.py,.md
 
-autocmd FileType coffee setlocal shiftwidth=2 tabstop=2
-autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 autocmd FileType h,hpp,c,cpp setlocal expandtab shiftwidth=2 tabstop=2
   " au BufRead,BufNewFile *.cpp expandtab shiftwidth=2 tabstop=2

@@ -174,7 +174,7 @@ nvim_lsp.flow.setup {
 
 nvim_lsp.clangd.setup({
 	cmd = { "clangd" },
-	filetypes = { "c", "cpp" },
+	filetypes = { "c", "cpp", "h", "hpp" },
 	on_attach = on_attach,
 	-- root_dir = lspconfig.util.root_pattern("*.hxml"),
 	nvim_lsp.util.root_pattern("compile_commands.json", "compile_flags.txt", ".git"),

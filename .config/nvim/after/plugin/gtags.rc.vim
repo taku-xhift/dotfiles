@@ -6,7 +6,7 @@
 " nnoremap <silent> gK :Lspsaga hover_doc<CR>
 
 " https://uguisu.skr.jp/Windows/gtags.html
-nnoremap <silent> <Leader>gd :GtagsCursor<CR>
-nnoremap <silent> <Leader>gl :Gtags -f %<CR>
-nnoremap <silent> <Leader>gr :Gtags -r <C-r><C-w><CR>
+nnoremap <silent> <Leader>ggd :GtagsCursor<CR>
+nnoremap <silent> <Leader>ggl :Gtags -f %<CR>
+nnoremap <silent> <Leader>ggr :Gtags -r <C-r><C-w><CR>
 

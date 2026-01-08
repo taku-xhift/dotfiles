@@ -7,6 +7,8 @@ nnoremap <silent> <Leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 " nnoremap <silent> <Leader>fe <cmd>lua require('telescope.builtin').file_browser()<cr>
 nnoremap <silent> <Leader>fe <cmd>Telescope file_browser path=&:p:h select_buffer=true hidden=true<cr>
 nnoremap <silent> <Leader>f; <cmd>Telescope help_tags<cr>
+nnoremap <silent> <Leader>gd <cmd>Telescope lsp_definitions<cr>
+nnoremap <silent> <Leader>gr <cmd>Telescope lsp_references<cr>
 
 lua << EOF
 function telescope_buffer_dir()

@@ -7,7 +7,11 @@ if ! is_osx; then
 	# for llvm
 	export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 	export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+	# tarball nvim
+	# https://github.com/neovim/neovim/releases
+	# https://qiita.com/qq8244353/items/94cea37bf85c09dc4742
 fi
+	export PATH=$PATH:~/nvim-linux64/bin
 
 # ビープ音の停止
 setopt no_beep

@@ -86,3 +86,8 @@ imap <C-d> <Del>
 imap <C-h> <BS>
 imap <C-k> <C-r>=<SID>kill()<CR>
 
+
+" quickfix のウィンドウ操作
+noremap <leader>QQ :cclose<cr>
+noremap <leader>QO :copen<cr>
+
