@@ -1,15 +1,14 @@
 
+*.toml
+*.swp
 .zshrc.back
 .DS_store
 .nvimlog
 /* .tmux */
 
 
-
+wslu/
 .config/karabiner/automatic_backups/
-
 .config/xbuild/
-
 .config/karabiner/assets/complex_modifications/
-
 .config/gh/hosts.yml
